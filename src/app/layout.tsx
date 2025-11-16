@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://nithinv.dev",
+    url: "https://portfolio.nkumarv18.workers.dev/",
     title: "Nithin V | Senior AI Engineer",
     description: "Senior AI Engineer at Ortho Diagnostics with expertise in production ML systems, LLMs, and autonomous vehicle perception.",
     siteName: "Nithin V Portfolio",

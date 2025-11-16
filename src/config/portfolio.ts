@@ -8,7 +8,7 @@ export const portfolioConfig = {
     location: "",
     email: "nkumarv18@gmail..com",
     phone: "+1 (555) 123-4567",
-    website: "https://nithinv.dev",
+    website: "https://portfolio.nkumarv18.workers.dev/",
     
     // Professional Summary
     summary: "Senior AI Developer at Ortho Diagnostics with 5+ years of experience developing machine learning solutions for healthcare applications. Currently leading AI initiatives focused on claims processing automation and member services optimization. Previously worked at DataFlow Systems building scalable ML infrastructure and recommendation systems.",
@@ -162,8 +162,8 @@ export const portfolioConfig = {
       "Autonomous Vehicles", "Production ML", "AI Systems Architecture",
       "Data Science", "Neural Networks", "Nithin V", "Ortho Diagnostics", "DataFlow Systems"
     ],
-    url: "https://nithinv.dev",
-    image: "https://nithinv.dev/og-image.jpg",
+    url: "https://portfolio.nkumarv18.workers.dev/",
+    image: "https://portfolio.nkumarv18.workers.dev/og-image.jpg",
     author: "Nithin V"
   },
 

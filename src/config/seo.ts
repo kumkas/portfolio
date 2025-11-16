@@ -139,7 +139,7 @@ export function generateJsonLd() {
     "url": "https://portfolio.nkumarv18.workers.dev/",
     "image": "https://portfolio.nkumarv18.workers.dev.jpg",
     "sameAs": [
-    
+
     ],
     "worksFor": {
       "@type": "Organization",
@@ -173,7 +173,7 @@ export function generateJsonLd() {
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "professional",
-      "email": "nkumarv18@email.com"
+      "email": "nithinv@email.com"
     }
   }
 }
