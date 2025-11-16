@@ -47,14 +47,7 @@ export function Hero() {
                   <Mail className="w-4 h-4 mr-2" />
                   Contact
                 </Button>
-                <Button size="sm" variant="outline" onClick={() => window.open(social.linkedin, '_blank')}>
-                  <Linkedin className="w-4 h-4 mr-2" />
-                  LinkedIn
-                </Button>
-                <Button size="sm" variant="outline" onClick={() => window.open(social.github, '_blank')}>
-                  <Github className="w-4 h-4 mr-2" />
-                  GitHub
-                </Button>
+           
               </div>
             </div>
           </div>
@@ -78,26 +71,6 @@ export function Hero() {
               ))}
             </div>
           </div>
-
-          {/* Key Stats - Clean Grid */}
-          {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="text-center p-4 bg-card border border-border rounded-lg">
-              <div className="text-2xl font-bold text-primary">5+</div>
-              <div className="text-sm text-muted-foreground">Years Experience</div>
-            </div>
-            <div className="text-center p-4 bg-card border border-border rounded-lg">
-              <div className="text-2xl font-bold text-primary">50+</div>
-              <div className="text-sm text-muted-foreground">Models Deployed</div>
-            </div>
-            <div className="text-center p-4 bg-card border border-border rounded-lg">
-              <div className="text-2xl font-bold text-primary">8+</div>
-              <div className="text-sm text-muted-foreground">Engineers Led</div>
-            </div>
-            <div className="text-center p-4 bg-card border border-border rounded-lg">
-              <div className="text-2xl font-bold text-primary">10M+</div>
-              <div className="text-sm text-muted-foreground">Daily Users</div>
-            </div>
-          </div> */}
 
         </div>
       </div>

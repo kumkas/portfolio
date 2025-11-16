@@ -11,32 +11,33 @@ import {
   MapPin,
   ExternalLink
 } from "lucide-react"
+import { portfolioConfig } from "@/config/portfolio"
 
 const contactLinks = [
   {
     icon: Mail,
-    label: "Email",
-    value: "nithinv@email.com",
-    href: "mailto:nithinv@email.com"
+    label: "Email", 
+    value: portfolioConfig.personal.email.replace('mailto:', ''),
+    href: portfolioConfig.social.email
   },
-  {
-    icon: Linkedin,
-    label: "LinkedIn",
-    value: "/in/nithinv",
-    href: "https://linkedin.com/in/nithinv"
-  },
-  {
-    icon: Github,
-    label: "GitHub", 
-    value: "/nithinv",
-    href: "https://github.com/nithinv"
-  },
-  {
-    icon: Twitter,
-    label: "Twitter",
-    value: "@nithinv_ai", 
-    href: "https://twitter.com/nithinv_ai"
-  }
+  // {
+  //   icon: Linkedin,
+  //   label: "LinkedIn",
+  //   value: "/in/nithinv",
+  //   href: portfolioConfig.social.linkedin
+  // },
+  // {
+  //   icon: Github,
+  //   label: "GitHub",
+  //   value: "/nithinv", 
+  //   href: portfolioConfig.social.github
+  // },
+  // {
+  //   icon: Twitter,
+  //   label: "Twitter",
+  //   value: "@nithinv_ai",
+  //   href: portfolioConfig.social.twitter
+  // }
 ]
 
 export function Contact() {

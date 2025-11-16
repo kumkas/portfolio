@@ -11,7 +11,7 @@ export const portfolioConfig = {
     website: "https://nithinv.dev",
     
     // Professional Summary
-    summary: "Senior AI Developer at BCBS with 5+ years building production ML systems that drive real business value. Currently leading autonomous vehicle perception systems processing 10M+ miles of driving data daily. Previously scaled ML infrastructure at DataFlow Systems, reducing model inference latency by 70% and serving millions of users.",
+    summary: "Senior AI Developer at BCBS with 5+ years of experience developing machine learning solutions for healthcare applications. Currently leading AI initiatives focused on claims processing automation and member services optimization. Previously worked at DataFlow Systems building scalable ML infrastructure and recommendation systems.",
     
     // Availability Status
     availableForWork: true,
@@ -51,15 +51,15 @@ export const portfolioConfig = {
     {
       title: "Senior AI Developer",
       company: "BCBS",
-      location: "San Francisco, CA",
+      location: "",
       duration: "Jan 2022 - Present",
       current: true,
-      description: "Leading development of autonomous vehicle perception systems processing 10M+ miles of driving data daily.",
+      description: "Leading AI initiatives in healthcare technology, focusing on machine learning solutions for claims processing and member services.",
       achievements: [
-        "Led cross-functional team of 8 engineers building real-time ML pipelines",
-        "Reduced model inference latency by 80% through optimization and caching",
-        "Architected production LLM systems serving 10M+ daily requests",
-        "Implemented MLOps practices reducing deployment time from weeks to hours"
+        "Led cross-functional team of engineers building real-time ML pipelines for healthcare analytics",
+        "Developed and deployed machine learning models for claims processing and fraud detection", 
+        "Built data infrastructure to support AI initiatives across multiple business units",
+        "Collaborated with product teams to integrate AI solutions into customer-facing applications"
       ],
       skills: ["PyTorch", "Kubernetes", "AWS", "TensorFlow", "MLflow", "FastAPI"]
     },
@@ -69,12 +69,12 @@ export const portfolioConfig = {
       location: "Seattle, WA",
       duration: "Mar 2020 - Dec 2021",
       current: false,
-      description: "Built ML models for real-time recommendation systems and fraud detection serving millions of users.",
+      description: "Developed machine learning solutions for e-commerce and fintech applications with focus on scalable data pipelines.",
       achievements: [
-        "Developed recommendation engine improving user engagement by 35%",
-        "Built fraud detection system reducing false positives by 60%", 
-        "Mentored 4 junior engineers and established ML best practices",
-        "Migrated legacy systems to cloud-native microservices architecture"
+        "Built recommendation systems for e-commerce platform serving millions of users",
+        "Designed and implemented fraud detection models for payment processing", 
+        "Mentored junior engineers and established ML development workflows",
+        "Led migration of analytics workloads to cloud infrastructure"
       ],
       skills: ["Scikit-learn", "Apache Spark", "Docker", "PostgreSQL", "Redis"]
     },
@@ -84,12 +84,12 @@ export const portfolioConfig = {
       location: "Boston, MA",
       duration: "Jun 2019 - Feb 2020",
       current: false,
-      description: "Conducted cutting-edge research in computer vision and NLP with focus on multi-modal learning.",
+      description: "Conducted research in computer vision and natural language processing with applications to autonomous systems.",
       achievements: [
-        "Published 2 first-author papers in top-tier AI conferences (ICCV, NeurIPS)",
-        "Developed novel multi-modal fusion architecture for video understanding",
-        "Open-sourced research code with 1000+ GitHub stars",
-        "Won 'Best Paper Award' at Computer Vision Workshop"
+        "Researched deep learning approaches for video analysis and object detection",
+        "Collaborated on computer vision models for autonomous vehicle perception",
+        "Contributed to open-source ML frameworks and published technical documentation",
+        "Presented research findings at industry conferences and workshops"
       ],
       skills: ["TensorFlow", "OpenCV", "CUDA", "Python", "Research"]
     }

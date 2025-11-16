@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
 import { 
   ExternalLink, 
   Github, 
@@ -198,7 +199,7 @@ export function Projects() {
   }
 
   return (
-    <section id="projects" className="py-32 bg-muted/30">
+    <section id="projects" className="py-24 bg-background">
       <div className="container mx-auto px-6">
         {/* Header */}
         <motion.div
@@ -206,28 +207,31 @@ export function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-16"
+          className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Featured Projects
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl leading-relaxed mb-8">
-            Production AI systems serving millions of users. Each project demonstrates 
-            end-to-end ML engineering from research to deployment.
-          </p>
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold mb-4">
+              Featured Projects
+            </h2>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+              Machine learning projects showcasing practical applications in healthcare, 
+              e-commerce, and research domains.
+            </p>
 
-          {/* Category Filter */}
-          <div className="flex flex-wrap gap-3">
-            {categories.map((category) => (
-              <Button
-                key={category.id}
-                variant={selectedCategory === category.id ? "default" : "outline"}
-                size="sm"
-                onClick={() => setSelectedCategory(category.id)}
-              >
-                {category.label}
-              </Button>
-            ))}
+            {/* Category Filter */}
+            <div className="flex flex-wrap justify-center gap-3">
+              {categories.map((category) => (
+                <Button
+                  key={category.id}
+                  variant={selectedCategory === category.id ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => setSelectedCategory(category.id)}
+                  className="text-sm"
+                >
+                  {category.label}
+                </Button>
+              ))}
+            </div>
           </div>
         </motion.div>
 
@@ -237,75 +241,65 @@ export function Projects() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16"
+          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 max-w-7xl mx-auto"
         >
           {filteredProjects.map((project) => {
             const IconComponent = project.icon as React.ComponentType<{ className?: string }>
             return (
               <motion.div key={project.id} variants={item}>
-                <Card className="h-full border border-border hover:shadow-lg transition-shadow">
-                  <CardHeader className="pb-4">
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="p-3 rounded-lg bg-muted">
-                        <IconComponent className="w-6 h-6 text-foreground" />
+                <Card className="h-full border border-border hover:shadow-md transition-all duration-200 hover:-translate-y-1 group">
+                  <CardHeader className="p-6 pb-4">
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="p-3 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                        <IconComponent className="w-6 h-6 text-primary" />
                       </div>
                       <Badge 
-                        variant="secondary" 
-                        className={getStatusColor(project.status)}
+                        variant="outline" 
+                        className={cn("text-xs font-medium", getStatusColor(project.status))}
                       >
-                        {project.status.toUpperCase()}
+                        {project.status}
                       </Badge>
                     </div>
-                    <CardTitle className="text-xl mb-2">
+                    <CardTitle className="text-lg font-semibold mb-3 group-hover:text-primary transition-colors">
                       {project.title}
                     </CardTitle>
-                    <CardDescription className="text-sm leading-relaxed mb-4">
+                    <CardDescription className="text-sm text-muted-foreground leading-relaxed mb-4">
                       {project.description}
                     </CardDescription>
 
                     {/* Tech Stack */}
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {project.tech.slice(0, 4).map((tech, index) => (
-                        <Badge key={index} variant="outline" className="text-xs">
+                    <div className="flex flex-wrap gap-1.5 mb-6">
+                      {project.tech.slice(0, 3).map((tech, index) => (
+                        <Badge key={index} variant="secondary" className="text-xs bg-muted/50 hover:bg-muted">
                           {tech}
                         </Badge>
                       ))}
-                      {project.tech.length > 4 && (
-                        <Badge variant="outline" className="text-xs">
-                          +{project.tech.length - 4} more
+                      {project.tech.length > 3 && (
+                        <Badge variant="secondary" className="text-xs bg-muted/50">
+                          +{project.tech.length - 3}
                         </Badge>
                       )}
                     </div>
                   </CardHeader>
 
-                  <CardContent className="pt-0">
-                    {/* Metrics */}
-                    <div className="space-y-3 mb-6">
-                      {project.metrics.map((metric, index) => (
-                        <div key={index} className="flex justify-between items-center text-sm">
-                          <span className="text-muted-foreground">{metric.label}:</span>
-                          <span className="font-semibold">{metric.value}</span>
-                        </div>
-                      ))}
-                    </div>
-
+                  <CardContent className="p-6 pt-0 mt-auto">
                     {/* Links */}
-                    <div className="flex space-x-2">
+                    <div className="flex gap-2">
                       {project.links.demo && (
-                        <Button size="sm" variant="default" className="flex-1">
-                          <Play className="w-4 h-4 mr-2" />
+                        <Button size="sm" variant="outline" className="flex-1 text-xs">
+                          <Play className="w-3 h-3 mr-1.5" />
                           Demo
                         </Button>
                       )}
                       {project.links.github && (
-                        <Button size="sm" variant="outline" className="flex-1">
-                          <Github className="w-4 h-4 mr-2" />
+                        <Button size="sm" variant="outline" className="flex-1 text-xs">
+                          <Github className="w-3 h-3 mr-1.5" />
                           Code
                         </Button>
                       )}
                       {project.links.paper && (
-                        <Button size="sm" variant="outline" className="flex-1">
-                          <ExternalLink className="w-4 h-4 mr-2" />
+                        <Button size="sm" variant="outline" className="flex-1 text-xs">
+                          <ExternalLink className="w-3 h-3 mr-1.5" />
                           Paper
                         </Button>
                       )}

@@ -10,6 +10,7 @@ import {
   Download,
   ExternalLink
 } from "lucide-react"
+import { portfolioConfig } from "@/config/portfolio"
 
 interface Experience {
   title: string
@@ -23,86 +24,8 @@ interface Experience {
   skills: string[]
 }
 
-const experiences: Experience[] = [
-  {
-    title: "Senior AI Engineer",
-    company: "TechCorp AI",
-    location: "San Francisco, CA",
-    duration: "Jan 2022 - Present",
-    current: true,
-    description: "Leading development of autonomous vehicle perception systems processing 10M+ miles of driving data daily.",
-    achievements: [
-      "Led cross-functional team of 8 engineers building real-time ML pipelines",
-      "Reduced model inference latency by 80% through optimization and caching",
-      "Architected production LLM systems serving 10M+ daily requests",
-      "Implemented MLOps practices reducing deployment time from weeks to hours"
-    ],
-    skills: ["PyTorch", "Kubernetes", "AWS", "TensorFlow", "MLflow", "FastAPI"]
-  },
-  {
-    title: "Machine Learning Engineer",
-    company: "DataFlow Systems",
-    location: "Seattle, WA", 
-    duration: "Mar 2020 - Dec 2021",
-    current: false,
-    description: "Built ML models for real-time recommendation systems and fraud detection serving millions of users.",
-    achievements: [
-      "Developed recommendation engine improving user engagement by 35%",
-      "Built fraud detection system reducing false positives by 60%",
-      "Mentored 4 junior engineers and established ML best practices",
-      "Migrated legacy systems to cloud-native microservices architecture"
-    ],
-    skills: ["Scikit-learn", "Apache Spark", "Docker", "PostgreSQL", "Redis"]
-  },
-  {
-    title: "AI Research Engineer",
-    company: "InnovateAI Labs",
-    location: "Boston, MA",
-    duration: "Jun 2019 - Feb 2020",
-    current: false,
-    description: "Conducted cutting-edge research in computer vision and NLP with focus on multi-modal learning.",
-    achievements: [
-      "Published 2 first-author papers in top-tier AI conferences (ICCV, NeurIPS)",
-      "Developed novel multi-modal fusion architecture for video understanding",
-      "Open-sourced research code with 1000+ GitHub stars",
-      "Won 'Best Paper Award' at Computer Vision Workshop"
-    ],
-    skills: ["TensorFlow", "OpenCV", "CUDA", "Python", "Research"]
-  }
-]
-
-const education = [
-  {
-    degree: "Master of Science in Computer Science",
-    school: "Stanford University",
-    location: "Stanford, CA",
-    duration: "2017 - 2019",
-    specialization: "Artificial Intelligence",
-    gpa: "3.9/4.0",
-    thesis: "Neural Architecture Search for Efficient Deep Learning Models",
-    achievements: [
-      "Graduate Research Assistant in AI Lab",
-      "Teaching Assistant for CS229 (Machine Learning)",
-      "Recipient of Stanford AI Fellowship",
-      "Published 3 conference papers"
-    ]
-  },
-  {
-    degree: "Bachelor of Science in Computer Science",
-    school: "UC Berkeley", 
-    location: "Berkeley, CA",
-    duration: "2013 - 2017",
-    specialization: "Data Science & Machine Learning",
-    gpa: "3.8/4.0",
-    thesis: "Deep Learning for Medical Image Classification",
-    achievements: [
-      "Summa Cum Laude graduate",
-      "President of AI/ML Student Society",
-      "Winner of Berkeley Hackathon 2016",
-      "Research in Professor's Computer Vision Lab"
-    ]
-  }
-]
+const experiences = portfolioConfig.experience
+const education = portfolioConfig.education
 
 export function Experience() {
   return (
@@ -151,10 +74,7 @@ export function Experience() {
                       <Calendar className="w-3 h-3" />
                       {exp.duration}
                     </div>
-                    <div className="flex items-center gap-1">
-                      <MapPin className="w-3 h-3" />
-                      {exp.location}
-                    </div>
+              
                   </div>
                   
                   {/* Description */}
