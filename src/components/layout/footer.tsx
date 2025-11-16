@@ -30,10 +30,10 @@ export function Footer() {
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">AC</span>
+              <div className="w-8 h-8 bg-foreground rounded-lg flex items-center justify-center">
+                <span className="text-background font-bold text-sm">AC</span>
               </div>
-              <span className="font-bold text-xl gradient-text">Alex Chen</span>
+              <span className="font-bold text-xl">Alex Chen</span>
             </div>
             <p className="text-sm text-muted-foreground">
               Senior AI Engineer passionate about building production ML systems 
@@ -97,7 +97,7 @@ export function Footer() {
                 )
               })}
             </div>
-            <Button variant="ai" size="sm" className="w-full">
+            <Button variant="outline" size="sm" className="w-full">
               Get In Touch
             </Button>
           </div>
@@ -122,30 +122,6 @@ export function Footer() {
           </div>
         </div>
 
-        {/* AI Particles Animation */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {Array.from({ length: 20 }).map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-1 h-1 bg-blue-500/30 rounded-full"
-              initial={{
-                x: (i * 96) % 1920,
-                y: 800,
-                opacity: 0,
-              }}
-              animate={{
-                y: -100,
-                opacity: [0, 1, 0],
-              }}
-              transition={{
-                duration: (i % 3) + 2,
-                repeat: Infinity,
-                delay: (i % 4) * 0.5,
-                ease: "linear",
-              }}
-            />
-          ))}
-        </div>
       </div>
     </footer>
   )

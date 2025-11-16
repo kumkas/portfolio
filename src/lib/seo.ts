@@ -197,7 +197,7 @@ export function generateSitemapData() {
   return sections.map(section => ({
     url: `${baseUrl}${section.path}`,
     lastModified: new Date(),
-    changeFrequency: section.changefreq,
+    changeFrequency: section.changefreq as "weekly" | "monthly",
     priority: section.priority,
   }))
 }

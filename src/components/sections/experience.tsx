@@ -1,32 +1,26 @@
 "use client"
 
 import * as React from "react"
-import { motion } from "framer-motion"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
+import { Card } from "@/components/ui/card"
 import { 
   Calendar, 
   MapPin, 
-  TrendingUp, 
-  Users, 
-  Award, 
-  Briefcase,
   Building,
-  ExternalLink,
-  Download
+  Download,
+  ExternalLink
 } from "lucide-react"
 
 interface Experience {
   title: string
   company: string
+  companyLogo?: string
   location: string
   duration: string
-  type: "full-time" | "contract" | "internship"
+  current: boolean
   description: string
   achievements: string[]
-  technologies: string[]
-  metrics?: string[]
+  skills: string[]
 }
 
 const experiences: Experience[] = [
@@ -35,68 +29,45 @@ const experiences: Experience[] = [
     company: "TechCorp AI",
     location: "San Francisco, CA",
     duration: "Jan 2022 - Present",
-    type: "full-time",
-    description: "Leading the development of large-scale AI systems and ML infrastructure for autonomous vehicle perception and decision-making.",
+    current: true,
+    description: "Leading development of autonomous vehicle perception systems processing 10M+ miles of driving data daily.",
     achievements: [
-      "Architected and deployed production LLM systems serving 10M+ daily requests",
       "Led cross-functional team of 8 engineers building real-time ML pipelines",
       "Reduced model inference latency by 80% through optimization and caching",
-      "Implemented MLOps practices reducing deployment time from weeks to hours",
-      "Published 3 papers on efficient neural architecture search"
+      "Architected production LLM systems serving 10M+ daily requests",
+      "Implemented MLOps practices reducing deployment time from weeks to hours"
     ],
-    technologies: ["PyTorch", "Kubernetes", "AWS", "TensorFlow", "MLflow", "FastAPI"],
-    metrics: ["$2M+ cost savings", "99.7% uptime", "80% latency reduction"]
+    skills: ["PyTorch", "Kubernetes", "AWS", "TensorFlow", "MLflow", "FastAPI"]
   },
   {
     title: "Machine Learning Engineer",
     company: "DataFlow Systems",
     location: "Seattle, WA", 
     duration: "Mar 2020 - Dec 2021",
-    type: "full-time",
-    description: "Built and maintained ML models for real-time recommendation systems and fraud detection across multiple product lines.",
+    current: false,
+    description: "Built ML models for real-time recommendation systems and fraud detection serving millions of users.",
     achievements: [
       "Developed recommendation engine improving user engagement by 35%",
       "Built fraud detection system reducing false positives by 60%",
-      "Implemented A/B testing framework for ML model evaluation",
       "Mentored 4 junior engineers and established ML best practices",
       "Migrated legacy systems to cloud-native microservices architecture"
     ],
-    technologies: ["Scikit-learn", "Apache Spark", "Docker", "PostgreSQL", "Redis"],
-    metrics: ["35% engagement boost", "60% false positive reduction", "$1.5M fraud prevented"]
+    skills: ["Scikit-learn", "Apache Spark", "Docker", "PostgreSQL", "Redis"]
   },
   {
     title: "AI Research Engineer",
     company: "InnovateAI Labs",
     location: "Boston, MA",
     duration: "Jun 2019 - Feb 2020",
-    type: "full-time", 
-    description: "Conducted cutting-edge research in computer vision and natural language processing, with focus on multi-modal learning.",
+    current: false,
+    description: "Conducted cutting-edge research in computer vision and NLP with focus on multi-modal learning.",
     achievements: [
-      "Developed novel multi-modal fusion architecture for video understanding",
       "Published 2 first-author papers in top-tier AI conferences (ICCV, NeurIPS)",
-      "Collaborated with Stanford and MIT researchers on joint projects",
+      "Developed novel multi-modal fusion architecture for video understanding",
       "Open-sourced research code with 1000+ GitHub stars",
       "Won 'Best Paper Award' at Computer Vision Workshop"
     ],
-    technologies: ["TensorFlow", "OpenCV", "CUDA", "Python", "Jupyter"],
-    metrics: ["2 top-tier publications", "1000+ GitHub stars", "Best Paper Award"]
-  },
-  {
-    title: "Data Science Intern",
-    company: "Global Analytics Inc",
-    location: "New York, NY",
-    duration: "May 2018 - Aug 2018",
-    type: "internship",
-    description: "Applied machine learning to financial data analysis and algorithmic trading strategy development.",
-    achievements: [
-      "Built predictive models for stock price movement with 72% accuracy",
-      "Developed automated trading strategies generating 15% returns",
-      "Created data pipeline processing 100GB+ daily market data",
-      "Presented findings to C-level executives",
-      "Received full-time offer upon internship completion"
-    ],
-    technologies: ["Python", "Pandas", "NumPy", "SQL", "Matplotlib"],
-    metrics: ["72% prediction accuracy", "15% trading returns", "100GB+ daily processing"]
+    skills: ["TensorFlow", "OpenCV", "CUDA", "Python", "Research"]
   }
 ]
 
@@ -134,263 +105,118 @@ const education = [
 ]
 
 export function Experience() {
-  const [selectedExperience, setSelectedExperience] = React.useState<number>(0)
-
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  }
-
-  const item = {
-    hidden: { opacity: 0, x: -20 },
-    show: { opacity: 1, x: 0 }
-  }
-
-  const getTypeColor = (type: Experience["type"]) => {
-    switch (type) {
-      case "full-time": return "bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300"
-      case "contract": return "bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300"
-      case "internship": return "bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-300"
-    }
-  }
-
   return (
-    <section id="experience" className="py-20 bg-gradient-to-b from-muted/30 to-background">
+    <section id="experience" className="py-32 bg-background">
       <div className="container mx-auto px-6">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="gradient-text">Experience</span>
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8">
-            5+ years building production AI systems across different industries and scales,
-            from research to enterprise deployment.
-          </p>
-          <Button variant="outline" className="mb-8">
-            <Download className="w-4 h-4 mr-2" />
-            Download Resume
-          </Button>
-        </motion.div>
+        <div className="max-w-4xl mx-auto">
+          
+          {/* Section Header */}
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="text-3xl font-bold">Experience</h2>
+            <button className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground">
+              <Download className="w-4 h-4" />
+              Download CV
+            </button>
+          </div>
 
-        {/* Experience Timeline */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
-          {/* Timeline Navigation */}
-          <motion.div
-            variants={container}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            className="lg:col-span-1"
-          >
-            <div className="space-y-4 lg:sticky lg:top-20">
-              {experiences.map((exp, index) => (
-                <motion.div key={index} variants={item}>
-                  <Card 
-                    className={`p-4 cursor-pointer transition-all duration-300 border-2 ${
-                      selectedExperience === index 
-                        ? "border-primary shadow-lg bg-primary/5" 
-                        : "hover:border-primary/20 hover:shadow-md"
-                    }`}
-                    onClick={() => setSelectedExperience(index)}
-                  >
-                    <div className="flex items-start space-x-3">
-                      <div className="p-2 rounded-lg bg-gradient-to-r from-primary to-primary/80 shadow-md flex-shrink-0">
-                        <Briefcase className="w-4 h-4 text-white" />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center justify-between mb-2">
-                          <h4 className="font-semibold text-sm truncate">{exp.title}</h4>
-                          <Badge variant="secondary" className={getTypeColor(exp.type)}>
-                            {exp.type}
-                          </Badge>
-                        </div>
-                        <p className="text-sm text-primary font-medium">{exp.company}</p>
-                        <div className="flex items-center text-xs text-muted-foreground mt-1">
-                          <Calendar className="w-3 h-3 mr-1" />
-                          {exp.duration}
-                        </div>
-                      </div>
+          {/* Experience Timeline - LinkedIn Style */}
+          <div className="space-y-6">
+            {experiences.map((exp, index) => (
+              <div key={index} className="flex gap-4 pb-6 border-b border-border last:border-b-0">
+                
+                {/* Company Logo Placeholder */}
+                <div className="w-12 h-12 bg-muted rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                  <Building className="w-6 h-6 text-muted-foreground" />
+                </div>
+                
+                {/* Experience Details */}
+                <div className="flex-1 min-w-0">
+                  
+                  {/* Job Title & Company */}
+                  <div className="flex items-start justify-between mb-2">
+                    <div>
+                      <h3 className="text-lg font-semibold">{exp.title}</h3>
+                      <p className="text-base font-medium text-muted-foreground">{exp.company}</p>
                     </div>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Experience Details */}
-          <motion.div
-            key={selectedExperience}
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            className="lg:col-span-2"
-          >
-            <Card className="p-8 h-full">
-              <CardHeader className="pb-6">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="p-3 rounded-lg bg-gradient-to-r from-primary to-primary/80 shadow-md">
-                    <Building className="w-6 h-6 text-white" />
+                    {exp.current && (
+                      <Badge variant="secondary" className="bg-green-100 text-green-700 dark:bg-green-900/20 dark:text-green-400">
+                        Current
+                      </Badge>
+                    )}
                   </div>
-                  <Badge variant="secondary" className={getTypeColor(experiences[selectedExperience].type)}>
-                    {experiences[selectedExperience].type.toUpperCase()}
-                  </Badge>
-                </div>
-                <CardTitle className="text-2xl mb-2">
-                  {experiences[selectedExperience].title}
-                </CardTitle>
-                <div className="text-lg space-y-2">
-                  <div className="flex items-center text-primary font-medium">
-                    <Building className="w-4 h-4 mr-2" />
-                    {experiences[selectedExperience].company}
+                  
+                  {/* Duration & Location */}
+                  <div className="flex items-center gap-4 text-sm text-muted-foreground mb-3">
+                    <div className="flex items-center gap-1">
+                      <Calendar className="w-3 h-3" />
+                      {exp.duration}
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <MapPin className="w-3 h-3" />
+                      {exp.location}
+                    </div>
                   </div>
-                  <div className="flex items-center text-muted-foreground">
-                    <MapPin className="w-4 h-4 mr-2" />
-                    {experiences[selectedExperience].location} • {experiences[selectedExperience].duration}
-                  </div>
-                </div>
-              </CardHeader>
-
-              <CardContent className="space-y-6">
-                {/* Description */}
-                <p className="text-muted-foreground leading-relaxed">
-                  {experiences[selectedExperience].description}
-                </p>
-
-                {/* Key Metrics */}
-                {experiences[selectedExperience].metrics && (
-                  <div>
-                    <h4 className="font-semibold mb-3 flex items-center">
-                      <TrendingUp className="w-4 h-4 mr-2" />
-                      Key Impact
-                    </h4>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                      {experiences[selectedExperience].metrics!.map((metric, index) => (
-                        <div key={index} className="text-center p-3 bg-primary/5 rounded-lg">
-                          <div className="text-lg font-bold text-primary">{metric}</div>
-                        </div>
+                  
+                  {/* Description */}
+                  <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                    {exp.description}
+                  </p>
+                  
+                  {/* Key Achievements */}
+                  <div className="mb-4">
+                    <ul className="space-y-1">
+                      {exp.achievements.map((achievement, achievementIndex) => (
+                        <li key={achievementIndex} className="flex items-start text-sm">
+                          <div className="w-1 h-1 bg-muted-foreground rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                          <span className="text-muted-foreground">{achievement}</span>
+                        </li>
                       ))}
-                    </div>
+                    </ul>
                   </div>
-                )}
-
-                {/* Achievements */}
-                <div>
-                  <h4 className="font-semibold mb-3 flex items-center">
-                    <Award className="w-4 h-4 mr-2" />
-                    Key Achievements
-                  </h4>
-                  <ul className="space-y-2">
-                    {experiences[selectedExperience].achievements.map((achievement, index) => (
-                      <li key={index} className="flex items-start text-sm">
-                        <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <span>{achievement}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Technologies */}
-                <div>
-                  <h4 className="font-semibold mb-3">Technologies Used</h4>
+                  
+                  {/* Skills */}
                   <div className="flex flex-wrap gap-2">
-                    {experiences[selectedExperience].technologies.map((tech, index) => (
-                      <Badge key={index} variant="outline" className="text-xs">
-                        {tech}
+                    {exp.skills.map((skill, skillIndex) => (
+                      <Badge key={skillIndex} variant="secondary" className="text-xs">
+                        {skill}
                       </Badge>
                     ))}
                   </div>
+                  
                 </div>
-              </CardContent>
-            </Card>
-          </motion.div>
-        </div>
-
-        {/* Education */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold mb-4">Education</h3>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Strong academic foundation in computer science and artificial intelligence
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {education.map((edu, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-              >
-                <Card className="p-6 h-full hover:shadow-lg transition-all duration-300 group border-2 hover:border-primary/20">
-                  <CardHeader className="pb-4">
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="p-3 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 shadow-md group-hover:shadow-lg transition-shadow">
-                        <Award className="w-6 h-6 text-white" />
-                      </div>
-                      <Badge variant="secondary">{edu.gpa}</Badge>
-                    </div>
-                    <CardTitle className="text-xl mb-2 group-hover:text-primary transition-colors">
-                      {edu.degree}
-                    </CardTitle>
-                    <div className="space-y-1">
-                      <div className="flex items-center text-primary font-medium">
-                        <Building className="w-4 h-4 mr-2" />
-                        {edu.school}
-                      </div>
-                      <div className="flex items-center text-muted-foreground text-sm">
-                        <MapPin className="w-4 h-4 mr-2" />
-                        {edu.location} • {edu.duration}
-                      </div>
-                    </div>
-                  </CardHeader>
-
-                  <CardContent>
-                    <div className="space-y-4">
-                      <div>
-                        <Badge variant="outline" className="mb-2">
-                          {edu.specialization}
-                        </Badge>
-                        <p className="text-sm text-muted-foreground">
-                          <strong>Thesis:</strong> {edu.thesis}
-                        </p>
-                      </div>
-
-                      <div>
-                        <h5 className="font-medium mb-2">Notable Achievements</h5>
-                        <ul className="space-y-1">
-                          {edu.achievements.map((achievement, achievementIndex) => (
-                            <li key={achievementIndex} className="flex items-start text-xs">
-                              <div className="w-1 h-1 bg-primary rounded-full mt-2 mr-2 flex-shrink-0"></div>
-                              <span>{achievement}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
+
+          {/* Education Section */}
+          <div className="mt-12 pt-8 border-t border-border">
+            <h2 className="text-3xl font-bold mb-6">Education</h2>
+            <div className="space-y-4">
+              {education.slice(0, 2).map((edu, index) => (
+                <Card key={index} className="p-6 border border-border">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-muted rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Building className="w-6 h-6 text-muted-foreground" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-lg font-semibold mb-1">{edu.degree}</h3>
+                      <p className="text-base font-medium text-muted-foreground mb-2">{edu.school}</p>
+                      <div className="flex items-center gap-4 text-sm text-muted-foreground mb-3">
+                        <span>{edu.duration}</span>
+                        <span>•</span>
+                        <span>{edu.location}</span>
+                        <span>•</span>
+                        <span>GPA: {edu.gpa}</span>
+                      </div>
+                      <Badge variant="outline" className="mb-2">{edu.specialization}</Badge>
+                    </div>
+                  </div>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
   )

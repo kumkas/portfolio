@@ -95,7 +95,7 @@ export function About() {
   }
 
   return (
-    <section id="about" className="py-20 bg-gradient-to-b from-background to-muted/30">
+    <section id="about" className="py-20 bg-background">
       <div className="container mx-auto px-6">
         {/* Header */}
         <motion.div
@@ -155,13 +155,13 @@ export function About() {
               const IconComponent = data.icon
               return (
                 <motion.div key={category} variants={item}>
-                  <Card className="h-full hover:shadow-lg transition-all duration-300 group border-2 hover:border-primary/20">
+                  <Card className="h-full border border-border">
                     <CardContent className="p-6">
                       <div className="flex items-center mb-4">
-                        <div className={`p-3 rounded-lg bg-gradient-to-r ${data.color} shadow-md group-hover:shadow-lg transition-shadow`}>
-                          <IconComponent className="w-6 h-6 text-white" />
+                        <div className="p-3 rounded-lg bg-muted">
+                          <IconComponent className="w-6 h-6 text-foreground" />
                         </div>
-                        <h4 className="text-lg font-semibold ml-3 group-hover:text-primary transition-colors">
+                        <h4 className="text-lg font-semibold ml-3">
                           {category}
                         </h4>
                       </div>
@@ -170,7 +170,7 @@ export function About() {
                           <Badge
                             key={index}
                             variant="secondary"
-                            className="text-xs hover:bg-primary/10 transition-colors"
+                            className="text-xs"
                           >
                             {skill}
                           </Badge>

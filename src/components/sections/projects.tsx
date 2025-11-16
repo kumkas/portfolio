@@ -198,7 +198,7 @@ export function Projects() {
   }
 
   return (
-    <section id="projects" className="py-20 bg-gradient-to-b from-muted/30 to-background">
+    <section id="projects" className="py-32 bg-muted/30">
       <div className="container mx-auto px-6">
         {/* Header */}
         <motion.div
@@ -206,25 +206,24 @@ export function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="gradient-text">Featured Projects</span>
+            Featured Projects
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8">
+          <p className="text-xl text-muted-foreground max-w-3xl leading-relaxed mb-8">
             Production AI systems serving millions of users. Each project demonstrates 
             end-to-end ML engineering from research to deployment.
           </p>
 
           {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-3">
+          <div className="flex flex-wrap gap-3">
             {categories.map((category) => (
               <Button
                 key={category.id}
-                variant={selectedCategory === category.id ? "ai" : "outline"}
+                variant={selectedCategory === category.id ? "default" : "outline"}
                 size="sm"
                 onClick={() => setSelectedCategory(category.id)}
-                className="transition-all duration-300"
               >
                 {category.label}
               </Button>
@@ -244,11 +243,11 @@ export function Projects() {
             const IconComponent = project.icon
             return (
               <motion.div key={project.id} variants={item}>
-                <Card className="h-full hover:shadow-xl transition-all duration-300 cursor-pointer group border-2 hover:border-primary/20 hover:scale-105">
+                <Card className="h-full border border-border hover:shadow-lg transition-shadow">
                   <CardHeader className="pb-4">
                     <div className="flex items-center justify-between mb-4">
-                      <div className={`p-3 rounded-lg bg-gradient-to-r ${project.gradient} shadow-md group-hover:shadow-lg transition-shadow`}>
-                        <IconComponent className="w-6 h-6 text-white" />
+                      <div className="p-3 rounded-lg bg-muted">
+                        <IconComponent className="w-6 h-6 text-foreground" />
                       </div>
                       <Badge 
                         variant="secondary" 
@@ -257,7 +256,7 @@ export function Projects() {
                         {project.status.toUpperCase()}
                       </Badge>
                     </div>
-                    <CardTitle className="text-xl mb-2 group-hover:text-primary transition-colors">
+                    <CardTitle className="text-xl mb-2">
                       {project.title}
                     </CardTitle>
                     <CardDescription className="text-sm leading-relaxed mb-4">
@@ -285,7 +284,7 @@ export function Projects() {
                       {project.metrics.map((metric, index) => (
                         <div key={index} className="flex justify-between items-center text-sm">
                           <span className="text-muted-foreground">{metric.label}:</span>
-                          <span className="font-semibold text-primary">{metric.value}</span>
+                          <span className="font-semibold">{metric.value}</span>
                         </div>
                       ))}
                     </div>
@@ -293,7 +292,7 @@ export function Projects() {
                     {/* Links */}
                     <div className="flex space-x-2">
                       {project.links.demo && (
-                        <Button size="sm" variant="ai" className="flex-1">
+                        <Button size="sm" variant="default" className="flex-1">
                           <Play className="w-4 h-4 mr-2" />
                           Demo
                         </Button>
@@ -326,15 +325,15 @@ export function Projects() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-center"
         >
-          <Card className="p-8 bg-gradient-to-br from-muted/50 to-muted/20 border-2 border-primary/10">
+          <Card className="p-8 bg-muted/50 border border-border">
             <div className="max-w-2xl mx-auto">
-              <Users className="w-12 h-12 mx-auto text-primary mb-4" />
+              <Users className="w-12 h-12 mx-auto text-foreground mb-4" />
               <h3 className="text-2xl font-bold mb-4">Let's Build Something Amazing</h3>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                 Interested in collaborating on cutting-edge AI projects? I'm always excited 
                 to work on challenging problems that push the boundaries of what's possible.
               </p>
-              <Button variant="ai" size="lg">
+              <Button variant="default" size="lg">
                 Start a Conversation
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>

@@ -5,24 +5,20 @@ import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/ui/theme-toggle"
-import { AiTwinChat } from "@/components/demos/ai-twin-chat"
 import { cn } from "@/lib/utils"
-import { Menu, X, Brain } from "lucide-react"
+import { Menu, X } from "lucide-react"
 
 const navItems = [
   { name: "Home", href: "#home" },
-  { name: "Demos", href: "#demos" },
-  { name: "About", href: "#about" },
   { name: "Projects", href: "#projects" },
-  { name: "Skills", href: "#skills" },
   { name: "Experience", href: "#experience" },
+  { name: "Skills", href: "#skills" },
   { name: "Contact", href: "#contact" },
 ]
 
 export function Navigation() {
   const [activeSection, setActiveSection] = React.useState("home")
   const [isScrolled, setIsScrolled] = React.useState(false)
-  const [isChatOpen, setIsChatOpen] = React.useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
 
   React.useEffect(() => {
@@ -61,10 +57,10 @@ export function Navigation() {
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">AC</span>
+            <div className="w-8 h-8 bg-foreground rounded-lg flex items-center justify-center">
+              <span className="text-background font-bold text-sm">AC</span>
             </div>
-            <span className="font-bold text-xl gradient-text">Alex Chen</span>
+            <span className="font-bold text-xl">Alex Chen</span>
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">
@@ -83,7 +79,7 @@ export function Navigation() {
                 {activeSection === item.href.substring(1) && (
                   <motion.div
                     layoutId="activeSection"
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-600"
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"
                     initial={false}
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
@@ -95,11 +91,6 @@ export function Navigation() {
           <div className="flex items-center space-x-2">
             <div className="hidden sm:flex items-center space-x-4">
               <ThemeToggle />
-              <Button variant="ai" size="sm" onClick={() => setIsChatOpen(true)}>
-                <Brain className="w-4 h-4 mr-2" />
-                <span className="hidden lg:inline">Chat with AI Alex</span>
-                <span className="lg:hidden">AI Chat</span>
-              </Button>
             </div>
             
             {/* Mobile Menu Button */}
@@ -165,8 +156,6 @@ export function Navigation() {
         </AnimatePresence>
       </nav>
 
-      {/* AI Twin Chat Modal */}
-      <AiTwinChat open={isChatOpen} onOpenChange={setIsChatOpen} />
     </motion.header>
   )
 }

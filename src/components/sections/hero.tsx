@@ -2,137 +2,91 @@
 
 import * as React from "react"
 import { Button } from "@/components/ui/button"
-import { AiTwinChat } from "@/components/demos/ai-twin-chat"
-import { RagDocumentChat } from "@/components/demos/rag-document-chat"
-import { Brain, ArrowDown, Sparkles } from "lucide-react"
-
+import { Badge } from "@/components/ui/badge"
+import { MapPin, Mail, Linkedin, Github } from "lucide-react"
 
 export function Hero() {
-  const [isVisible, setIsVisible] = React.useState(true)
-  const [isChatOpen, setIsChatOpen] = React.useState(false)
-  const [isRagOpen, setIsRagOpen] = React.useState(false)
-
-  React.useEffect(() => {
-    const handleScroll = () => {
-      setIsVisible(window.scrollY < window.innerHeight * 0.5)
-    }
-
-    window.addEventListener("scroll", handleScroll)
-    return () => {
-      window.removeEventListener("scroll", handleScroll)
-    }
-  }, [])
-
-  const scrollToNext = () => {
-    const nextSection = document.getElementById("about")
-    nextSection?.scrollIntoView({ behavior: "smooth" })
-  }
-
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-blue-50/20 dark:to-blue-950/20">
-      {/* Simple Background */}
-      <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-primary/5 via-background to-blue-50/10 dark:to-blue-950/10">
-        <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-      </div>
-
-
-      {/* Main Content */}
-      <div className="relative z-10 container mx-auto px-6 text-center">
+    <section id="home" className="pt-40 pb-20 bg-background">
+      <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
-          {/* Icon Group */}
-          <div className="flex justify-center space-x-4 mb-8">
-           
-          </div>
-
-          {/* Main Heading */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
-            <span className="gradient-text">Alex Chen</span>
-          </h1>
-
-          {/* Professional Title */}
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-primary mb-6 sm:mb-8">
-            Senior AI Engineer
-          </h2>
-
-          {/* Key Value Proposition */}
-          <div className="mb-6 sm:mb-8">
-            <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-sm sm:text-base font-medium">
-              <div className="flex items-center bg-primary/10 text-primary px-3 sm:px-4 py-2 rounded-full">
-                <Sparkles className="w-4 h-4 mr-2" />
-                5+ Years Experience
-              </div>
-              {/* <div className="flex items-center bg-green-500/10 text-green-600 dark:text-green-400 px-3 sm:px-4 py-2 rounded-full">
-                <Brain className="w-4 h-4 mr-2" />
-                50+ ML Models Deployed
-              </div> */}
-              {/* <div className="flex items-center bg-blue-500/10 text-blue-600 dark:text-blue-400 px-3 sm:px-4 py-2 rounded-full">
-                <ArrowDown className="w-4 h-4 mr-2 rotate-45" />
-                8+ Team Members Led
-              </div> */}
+          
+          {/* Professional Header - LinkedIn Style */}
+          <div className="flex flex-col md:flex-row items-start md:items-center gap-8 mb-8">
+            
+            {/* Profile Image */}
+            <div className="w-32 h-32 md:w-40 md:h-40 bg-muted rounded-full flex items-center justify-center flex-shrink-0">
+              <div className="text-6xl font-bold text-muted-foreground">AC</div>
             </div>
-          </div>
-
-          {/* Professional Summary */}
-          <div className="mb-8 sm:mb-12 max-w-4xl mx-auto">
-            <p className="text-lg sm:text-xl md:text-2xl text-foreground mb-4 leading-relaxed px-4 sm:px-0 font-medium">
-              I build production-scale AI systems that drive real business outcomes
-            </p>
-            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed px-4 sm:px-0">
-              Currently <strong className="text-primary">Senior AI Engineer at TechCorp AI</strong>, where I lead the development of 
-              autonomous vehicle perception systems processing 10M+ miles of real-world driving data. 
-              Previously scaled ML infrastructure at <strong className="text-primary">DataFlow Systems</strong>, 
-              reducing model inference latency by 70% and increasing deployment frequency by 400%.
-            </p>
-          </div>
-
-          {/* Core Expertise */}
-          <div className="mb-8 sm:mb-12 max-w-4xl mx-auto px-4 sm:px-0">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-sm sm:text-base">
-              <div className="text-center p-4 rounded-lg glass border border-primary/20">
-                <div className="font-semibold text-primary mb-2">LLM Engineering</div>
-                <div className="text-muted-foreground">RAG • Fine-tuning • Deployment</div>
+            
+            {/* Name and Title */}
+            <div className="flex-1">
+              <h1 className="text-4xl md:text-5xl font-bold mb-2">Alex Chen</h1>
+              <h2 className="text-xl md:text-2xl text-muted-foreground mb-4">
+                Senior AI Engineer
+              </h2>
+              
+              {/* Location and Status */}
+              <div className="flex flex-wrap items-center gap-4 mb-4">
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <MapPin className="w-4 h-4" />
+                  San Francisco, CA
+                </div>
+                <Badge variant="secondary" className="bg-green-100 text-green-700 dark:bg-green-900/20 dark:text-green-400">
+                  Open to work
+                </Badge>
               </div>
-              <div className="text-center p-4 rounded-lg glass border border-green-500/20">
-                <div className="font-semibold text-green-600 dark:text-green-400 mb-2">Computer Vision</div>
-                <div className="text-muted-foreground">Object Detection • Segmentation</div>
-              </div>
-              <div className="text-center p-4 rounded-lg glass border border-blue-500/20 sm:col-span-2 lg:col-span-1">
-                <div className="font-semibold text-blue-600 dark:text-blue-400 mb-2">MLOps at Scale</div>
-                <div className="text-muted-foreground">Kubernetes • AutoML • Monitoring</div>
+
+              {/* Quick Actions */}
+              <div className="flex flex-wrap gap-3">
+                <Button size="sm" variant="outline">
+                  <Mail className="w-4 h-4 mr-2" />
+                  Contact
+                </Button>
+                <Button size="sm" variant="outline">
+                  <Linkedin className="w-4 h-4 mr-2" />
+                  LinkedIn
+                </Button>
+                <Button size="sm" variant="outline">
+                  <Github className="w-4 h-4 mr-2" />
+                  GitHub
+                </Button>
               </div>
             </div>
           </div>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-12 sm:mb-16 px-4 sm:px-0">
-            <Button
-              size="lg"
-              variant="ai"
-              className="px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 w-full sm:w-auto"
-              onClick={() => {
-                const contactSection = document.getElementById("contact")
-                contactSection?.scrollIntoView({ behavior: "smooth" })
-              }}
-            >
-              <Brain className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-              Let's Talk - I'm Available
-            </Button>
-   
+          {/* Professional Summary - LinkedIn Style */}
+          <div className="bg-card border border-border rounded-lg p-6 mb-8">
+            <h3 className="text-lg font-semibold mb-4">About</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              Senior AI Engineer at TechCorp AI with 5+ years building production ML systems that drive real business value. 
+              Currently leading autonomous vehicle perception systems processing 10M+ miles of driving data daily. Previously 
+              scaled ML infrastructure at DataFlow Systems, reducing model inference latency by 70% and serving millions of users.
+            </p>
           </div>
+
+          {/* Key Stats - Clean Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="text-center p-4 bg-card border border-border rounded-lg">
+              <div className="text-2xl font-bold text-primary">5+</div>
+              <div className="text-sm text-muted-foreground">Years Experience</div>
+            </div>
+            <div className="text-center p-4 bg-card border border-border rounded-lg">
+              <div className="text-2xl font-bold text-primary">50+</div>
+              <div className="text-sm text-muted-foreground">Models Deployed</div>
+            </div>
+            <div className="text-center p-4 bg-card border border-border rounded-lg">
+              <div className="text-2xl font-bold text-primary">8+</div>
+              <div className="text-sm text-muted-foreground">Engineers Led</div>
+            </div>
+            <div className="text-center p-4 bg-card border border-border rounded-lg">
+              <div className="text-2xl font-bold text-primary">10M+</div>
+              <div className="text-sm text-muted-foreground">Daily Users</div>
+            </div>
+          </div>
+
         </div>
       </div>
-
-  
-
-      {/* Gradient Overlays */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/80 pointer-events-none" />
-      <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-background to-transparent pointer-events-none" />
-
-      {/* AI Twin Chat Modal */}
-      <AiTwinChat open={isChatOpen} onOpenChange={setIsChatOpen} />
-      
-      {/* RAG Document Chat Modal */}
-      <RagDocumentChat open={isRagOpen} onOpenChange={setIsRagOpen} />
     </section>
   )
 }
