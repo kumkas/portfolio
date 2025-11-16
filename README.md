@@ -1,11 +1,11 @@
-# Alex Chen - AI Engineer Portfolio
+# Nithin V - AI Engineer Portfolio
 
 A modern, interactive portfolio website showcasing AI engineering expertise, built with Next.js 14, Three.js, and TypeScript.
 
 ## 🚀 Features
 
 - **Interactive 3D Animations**: Neural network visualizations and floating elements
-- **AI Twin Chatbot**: Interactive AI assistant representing Alex Chen
+- **AI Twin Chatbot**: Interactive AI assistant representing Nithin V
 - **RAG Document Chat**: Demo of document-based AI chat functionality
 - **Responsive Design**: Optimized for all devices and screen sizes
 - **Performance Optimized**: Lazy loading, code splitting, and caching strategies
@@ -150,12 +150,12 @@ src/
 
 ## 📞 Contact
 
-**Alex Chen** - Senior AI Engineer
-- Email: alex.chen@email.com
-- LinkedIn: [linkedin.com/in/alexchen](https://linkedin.com/in/alexchen)
-- GitHub: [github.com/alexchen](https://github.com/alexchen)
-- Portfolio: [alexchen.dev](https://alexchen.dev)
+**Nithin V** - Senior AI Engineer
+- Email: nithinv@email.com
+- LinkedIn: [linkedin.com/in/nithinv](https://linkedin.com/in/nithinv)
+- GitHub: [github.com/nithinv](https://github.com/nithinv)
+- Portfolio: [nithinv.dev](https://nithinv.dev)
 
 ---
 
-Built with ❤️ by Alex Chen using cutting-edge web technologies.
+Built with ❤️ by Nithin V using cutting-edge web technologies.

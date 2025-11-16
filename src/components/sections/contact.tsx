@@ -16,26 +16,26 @@ const contactLinks = [
   {
     icon: Mail,
     label: "Email",
-    value: "alex.chen@email.com",
-    href: "mailto:alex.chen@email.com"
+    value: "nithinv@email.com",
+    href: "mailto:nithinv@email.com"
   },
   {
     icon: Linkedin,
     label: "LinkedIn",
-    value: "/in/alexchen",
-    href: "https://linkedin.com/in/alexchen"
+    value: "/in/nithinv",
+    href: "https://linkedin.com/in/nithinv"
   },
   {
     icon: Github,
     label: "GitHub", 
-    value: "/alexchen",
-    href: "https://github.com/alexchen"
+    value: "/nithinv",
+    href: "https://github.com/nithinv"
   },
   {
     icon: Twitter,
     label: "Twitter",
-    value: "@alexchen_ai", 
-    href: "https://twitter.com/alexchen_ai"
+    value: "@nithinv_ai", 
+    href: "https://twitter.com/nithinv_ai"
   }
 ]
 
@@ -79,10 +79,10 @@ export function Contact() {
 
           {/* Location & Availability */}
           <Card className="p-8 bg-muted/50 border border-border text-center">
-            <div className="flex items-center justify-center gap-2 mb-4">
+            {/* <div className="flex items-center justify-center gap-2 mb-4">
               <MapPin className="w-5 h-5 text-muted-foreground" />
               <span className="text-muted-foreground">Based in San Francisco, CA</span>
-            </div>
+            </div> */}
             <h3 className="text-xl font-semibold mb-2">Open to Opportunities</h3>
             <p className="text-muted-foreground mb-6">
               Currently seeking full-time Senior AI Engineer roles and interesting consulting projects.

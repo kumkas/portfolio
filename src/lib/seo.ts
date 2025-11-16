@@ -11,7 +11,7 @@ export interface SEOConfig {
 }
 
 const defaultConfig = {
-  title: "Alex Chen | Senior AI Engineer",
+  title: "Nithin V | Senior AI Engineer",
   description: "Senior AI Engineer at TechCorp AI with 5+ years building production ML systems. Expertise in LLMs, MLOps, and autonomous vehicle perception systems.",
   keywords: [
     "AI Engineer",
@@ -32,12 +32,12 @@ const defaultConfig = {
     "AI Systems Architecture",
     "Data Science",
     "Neural Networks",
-    "Alex Chen",
+    "Nithin V",
     "TechCorp AI",
     "DataFlow Systems"
   ],
-  url: "https://alexchen.dev",
-  image: "https://alexchen.dev/og-image.jpg",
+  url: "https://nithinv.dev",
+  image: "https://nithinv.dev/og-image.jpg",
   type: "website" as const,
 }
 
@@ -59,9 +59,9 @@ export function generateMetadata(config: SEOConfig = {}): Metadata {
     title: fullTitle,
     description,
     keywords: keywords.join(', '),
-    authors: [{ name: "Alex Chen", url: "https://alexchen.dev" }],
-    creator: "Alex Chen",
-    publisher: "Alex Chen",
+    authors: [{ name: "Nithin V", url: "https://nithinv.dev" }],
+    creator: "Nithin V",
+    publisher: "Nithin V",
     
     // Open Graph
     openGraph: {
@@ -70,7 +70,7 @@ export function generateMetadata(config: SEOConfig = {}): Metadata {
       url: fullUrl,
       title: fullTitle,
       description,
-      siteName: "Alex Chen Portfolio",
+      siteName: "Nithin V Portfolio",
       images: [
         {
           url: image,
@@ -86,7 +86,7 @@ export function generateMetadata(config: SEOConfig = {}): Metadata {
       card: "summary_large_image",
       title: fullTitle,
       description,
-      creator: "@alexchen_ai",
+      creator: "@nithinv_ai",
       images: [image],
     },
 
@@ -133,15 +133,15 @@ export function generateJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Alex Chen",
+    "name": "Nithin V",
     "jobTitle": "Senior AI Engineer",
     "description": "Senior AI Engineer with 5+ years building production ML systems at scale",
-    "url": "https://alexchen.dev",
-    "image": "https://alexchen.dev/alex-chen-profile.jpg",
+    "url": "https://nithinv.dev",
+    "image": "https://nithinv.dev/alex-chen-profile.jpg",
     "sameAs": [
-      "https://github.com/alexchen",
-      "https://linkedin.com/in/alexchen",
-      "https://twitter.com/alexchen_ai"
+      "https://github.com/nithinv",
+      "https://linkedin.com/in/nithinv",
+      "https://twitter.com/nithinv_ai"
     ],
     "worksFor": {
       "@type": "Organization",
@@ -176,14 +176,14 @@ export function generateJsonLd() {
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "professional",
-      "email": "alex.chen@email.com"
+      "email": "nithinv@email.com"
     }
   }
 }
 
 // Generate sitemap data
 export function generateSitemapData() {
-  const baseUrl = "https://alexchen.dev"
+  const baseUrl = "https://nithinv.dev"
   const sections = [
     { path: "", priority: 1.0, changefreq: "weekly" },
     { path: "#about", priority: 0.8, changefreq: "monthly" },

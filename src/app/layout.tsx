@@ -19,24 +19,24 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Alex Chen | Senior AI Engineer",
-  description: "Alex Chen's portfolio - Senior AI Engineer at TechCorp AI with 5+ years building production ML systems. Expertise in LLMs, MLOps, and autonomous vehicle perception systems.",
+  title: "Nithin V | Senior AI Engineer",
+  description: "Nithin V's portfolio - Senior AI Engineer at TechCorp AI with 5+ years building production ML systems. Expertise in LLMs, MLOps, and autonomous vehicle perception systems.",
   keywords: ["AI Engineer", "Machine Learning", "Deep Learning", "MLOps", "LLM", "RAG", "Computer Vision", "NLP", "TensorFlow", "PyTorch"],
-  authors: [{ name: "Alex Chen" }],
-  creator: "Alex Chen",
+  authors: [{ name: "Nithin V" }],
+  creator: "Nithin V",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://alexchen.dev",
-    title: "Alex Chen | Senior AI Engineer",
+    url: "https://nithinv.dev",
+    title: "Nithin V | Senior AI Engineer",
     description: "Senior AI Engineer at TechCorp AI with expertise in production ML systems, LLMs, and autonomous vehicle perception.",
-    siteName: "Alex Chen Portfolio",
+    siteName: "Nithin V Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Alex Chen | Senior AI Engineer",
+    title: "Nithin V | Senior AI Engineer",
     description: "Senior AI Engineer specializing in production ML systems and autonomous vehicle perception",
-    creator: "@alexchen_ai",
+    creator: "@nithinv_ai",
   },
   robots: {
     index: true,

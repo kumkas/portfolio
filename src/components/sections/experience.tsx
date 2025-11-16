@@ -106,18 +106,18 @@ const education = [
 
 export function Experience() {
   return (
-    <section id="experience" className="py-32 bg-background">
+    <section id="experience" className="py-8 bg-background">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           
           {/* Section Header */}
-          <div className="flex items-center justify-between mb-8">
+          {/* <div className="flex items-center justify-between mb-8">
             <h2 className="text-3xl font-bold">Experience</h2>
             <button className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground">
               <Download className="w-4 h-4" />
               Download CV
             </button>
-          </div>
+          </div> */}
 
           {/* Experience Timeline - LinkedIn Style */}
           <div className="space-y-6">

@@ -7,14 +7,9 @@ import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/ui/theme-toggle"
 import { cn } from "@/lib/utils"
 import { Menu, X } from "lucide-react"
+import { portfolioConfig } from "@/config/portfolio"
 
-const navItems = [
-  { name: "Home", href: "#home" },
-  { name: "Projects", href: "#projects" },
-  { name: "Experience", href: "#experience" },
-  { name: "Skills", href: "#skills" },
-  { name: "Contact", href: "#contact" },
-]
+const navItems = portfolioConfig.navigation
 
 export function Navigation() {
   const [activeSection, setActiveSection] = React.useState("home")
@@ -58,9 +53,9 @@ export function Navigation() {
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-foreground rounded-lg flex items-center justify-center">
-              <span className="text-background font-bold text-sm">AC</span>
+              <span className="text-background font-bold text-sm">{portfolioConfig.personal.initials}</span>
             </div>
-            <span className="font-bold text-xl">Alex Chen</span>
+            <span className="font-bold text-xl">{portfolioConfig.personal.name}</span>
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">

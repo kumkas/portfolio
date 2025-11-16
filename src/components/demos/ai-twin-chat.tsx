@@ -24,8 +24,8 @@ const aiPersonality = {
   description: "An AI version of Alex trained on his professional experience and expertise",
   responses: {
     greeting: [
-      "Hello! I'm AI Alex - a digital version of Alex Chen trained on his professional experience. I can tell you about his AI/ML projects, technical expertise, and career journey. What would you like to know?",
-      "Hi there! I'm an AI assistant representing Alex Chen. Feel free to ask about his machine learning projects, technical skills, or professional experience!",
+      "Hello! I'm AI Alex - a digital version of Nithin V trained on his professional experience. I can tell you about his AI/ML projects, technical expertise, and career journey. What would you like to know?",
+      "Hi there! I'm an AI assistant representing Nithin V. Feel free to ask about his machine learning projects, technical skills, or professional experience!",
       "Welcome! I'm here to share Alex's background in AI engineering. I can discuss his expertise, projects, or answer questions about his career path."
     ],
     skills: [

@@ -1,24 +1,18 @@
 "use client"
 
-import * as React from "react"
 import Link from "next/link"
-import { motion } from "framer-motion"
-import { Github, Linkedin, Twitter, Mail, Heart, Cpu } from "lucide-react"
+import { Github, Linkedin, Twitter, Mail, Heart } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { portfolioConfig } from "@/config/portfolio"
 
 const socialLinks = [
-  { name: "GitHub", href: "https://github.com", icon: Github },
-  { name: "LinkedIn", href: "https://linkedin.com", icon: Linkedin },
-  { name: "Twitter", href: "https://twitter.com", icon: Twitter },
-  { name: "Email", href: "mailto:hello@example.com", icon: Mail },
+  { name: "GitHub", href: portfolioConfig.social.github, icon: Github },
+  { name: "LinkedIn", href: portfolioConfig.social.linkedin, icon: Linkedin },
+  { name: "Twitter", href: portfolioConfig.social.twitter, icon: Twitter },
+  { name: "Email", href: portfolioConfig.social.email, icon: Mail },
 ]
 
-const quickLinks = [
-  { name: "Home", href: "#home" },
-  { name: "Projects", href: "#projects" },
-  { name: "About", href: "#about" },
-  { name: "Contact", href: "#contact" },
-]
+const quickLinks = portfolioConfig.navigation
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -31,12 +25,12 @@ export function Footer() {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-foreground rounded-lg flex items-center justify-center">
-                <span className="text-background font-bold text-sm">AC</span>
+                <span className="text-background font-bold text-sm">{portfolioConfig.personal.initials}</span>
               </div>
-              <span className="font-bold text-xl">Alex Chen</span>
+              <span className="font-bold text-xl">{portfolioConfig.personal.name}</span>
             </div>
             <p className="text-sm text-muted-foreground">
-              Senior AI Engineer passionate about building production ML systems 
+              {portfolioConfig.personal.title} passionate about building production ML systems 
               that solve real-world problems and drive meaningful impact.
             </p>
           </div>
@@ -107,7 +101,7 @@ export function Footer() {
         <div className="border-t border-border mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="flex items-center text-sm text-muted-foreground">
-              <span>© {currentYear} Alex Chen. Made with</span>
+              <span>© {currentYear} {portfolioConfig.personal.name}. Made with</span>
               <Heart className="w-4 h-4 mx-1 text-red-500" />
               <span>and passion for AI</span>
             </div>
