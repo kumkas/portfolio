@@ -3,15 +3,15 @@ export const portfolioConfig = {
   personal: {
     name: "Nithin V",
     initials: "NV",
-    title: "Senior AI Engineer",
-    company: "TechCorp AI",
+    title: "Senior AI Developer",
+    company: "BCBS",
     location: "",
-    email: "nithin@example.com",
+    email: "nkumarv18@gmail..com",
     phone: "+1 (555) 123-4567",
     website: "https://nithinv.dev",
     
     // Professional Summary
-    summary: "Senior AI Engineer at TechCorp AI with 5+ years building production ML systems that drive real business value. Currently leading autonomous vehicle perception systems processing 10M+ miles of driving data daily. Previously scaled ML infrastructure at DataFlow Systems, reducing model inference latency by 70% and serving millions of users.",
+    summary: "Senior AI Developer at BCBS with 5+ years building production ML systems that drive real business value. Currently leading autonomous vehicle perception systems processing 10M+ miles of driving data daily. Previously scaled ML infrastructure at DataFlow Systems, reducing model inference latency by 70% and serving millions of users.",
     
     // Availability Status
     availableForWork: true,
@@ -23,7 +23,7 @@ export const portfolioConfig = {
     github: "https://github.com/nithinv",
     linkedin: "https://linkedin.com/in/nithinv",
     twitter: "https://twitter.com/nithinv_ai",
-    email: "mailto:nithin@example.com",
+    email: "mailto:nkumarv18@gmail.com",
   },
 
   // Key Statistics
@@ -49,8 +49,8 @@ export const portfolioConfig = {
   // Experience
   experience: [
     {
-      title: "Senior AI Engineer",
-      company: "TechCorp AI",
+      title: "Senior AI Developer",
+      company: "BCBS",
       location: "San Francisco, CA",
       duration: "Jan 2022 - Present",
       current: true,
@@ -155,14 +155,14 @@ export const portfolioConfig = {
 
   // SEO & Metadata
   seo: {
-    title: "Nithin V | Senior AI Engineer",
-    description: "Senior AI Engineer at TechCorp AI with 5+ years building production ML systems. Expertise in LLMs, MLOps, and autonomous vehicle perception systems.",
+    title: "Nithin V | Senior AI Developer",
+    description: "Senior AI Developer at BCBS with 5+ years building production ML systems. Expertise in LLMs, MLOps, and autonomous vehicle perception systems.",
     keywords: [
-      "AI Engineer", "Machine Learning", "Deep Learning", "MLOps", "LLM", 
+      "AI Developer", "Machine Learning", "Deep Learning", "MLOps", "LLM", 
       "Large Language Models", "RAG", "Computer Vision", "NLP",
       "Natural Language Processing", "TensorFlow", "PyTorch", "Python",
       "Autonomous Vehicles", "Production ML", "AI Systems Architecture",
-      "Data Science", "Neural Networks", "Nithin V", "TechCorp AI", "DataFlow Systems"
+      "Data Science", "Neural Networks", "Nithin V", "BCBS", "DataFlow Systems"
     ],
     url: "https://nithinv.dev",
     image: "https://nithinv.dev/og-image.jpg",
