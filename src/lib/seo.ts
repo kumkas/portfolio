@@ -12,7 +12,7 @@ export interface SEOConfig {
 
 const defaultConfig = {
   title: "Nithin V | Senior AI Engineer",
-  description: "Senior AI Engineer at TechCorp AI with 5+ years building production ML systems. Expertise in LLMs, MLOps, and autonomous vehicle perception systems.",
+  description: "Senior AI Engineer at BCBS with 5+ years building production ML systems. Expertise in LLMs, MLOps, and autonomous vehicle perception systems.",
   keywords: [
     "AI Engineer",
     "Machine Learning", 
@@ -33,7 +33,7 @@ const defaultConfig = {
     "Data Science",
     "Neural Networks",
     "Nithin V",
-    "TechCorp AI",
+    "BCBS",
     "DataFlow Systems"
   ],
   url: "https://nithinv.dev",
@@ -145,7 +145,7 @@ export function generateJsonLd() {
     ],
     "worksFor": {
       "@type": "Organization",
-      "name": "TechCorp AI",
+      "name": "BCBS",
       "url": "https://techcorp.ai"
     },
     "alumniOf": {

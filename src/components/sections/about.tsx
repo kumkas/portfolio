@@ -114,7 +114,7 @@ export function About() {
             </p>
             <div className="text-lg text-muted-foreground mb-8 leading-relaxed space-y-4">
               <p>
-                Currently at <strong className="text-primary">TechCorp AI</strong>, I lead the development of autonomous vehicle perception 
+                Currently at <strong className="text-primary">BCBS</strong>, I lead the development of autonomous vehicle perception 
                 systems that process over <strong className="text-foreground">10 million miles</strong> of real-world driving data daily. 
                 My team's computer vision models achieve <strong className="text-foreground">99.7% accuracy</strong> in object detection, 
                 directly enabling safer autonomous navigation.

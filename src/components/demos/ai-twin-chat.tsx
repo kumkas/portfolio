@@ -34,12 +34,12 @@ const aiPersonality = {
       "Alex's core competencies include neural network architectures, transformer models, MLOps pipelines, and real-time AI systems. He's built production systems handling millions of requests with high accuracy."
     ],
     projects: [
-      "Alex's notable projects include: a multi-modal RAG system for document analysis at TechCorp AI, real-time sentiment analysis API processing 100K tweets/minute, and custom LLM fine-tuning achieving 23% performance improvements.",
+      "Alex's notable projects include: a multi-modal RAG system for document analysis at BCBS, real-time sentiment analysis API processing 100K tweets/minute, and custom LLM fine-tuning achieving 23% performance improvements.",
       "He's deployed production AI systems including recommendation engines improving engagement by 35%, fraud detection systems, and computer vision APIs. Each project demonstrates end-to-end ML engineering expertise.",
       "His project portfolio showcases modern AI: autonomous vehicle perception systems, transformer-based models, neural architecture search research, and MLOps infrastructure scaling to enterprise requirements."
     ],
     experience: [
-      "Alex currently works as Senior AI Engineer at TechCorp AI, leading autonomous vehicle perception systems. Previously at DataFlow Systems building recommendation engines and fraud detection. Started at InnovateAI Labs doing computer vision research.",
+      "Alex currently works as Senior AI Engineer at BCBS, leading autonomous vehicle perception systems. Previously at DataFlow Systems building recommendation engines and fraud detection. Started at InnovateAI Labs doing computer vision research.",
       "His career spans 5+ years from AI research to production engineering and technical leadership. He's led teams of 8+ engineers, published research papers, and shipped AI features serving millions of users.",
       "Alex's background shows progression from research intern to senior engineer, with experience across startups and enterprises. He's passionate about turning research breakthroughs into real-world impact."
     ],

@@ -20,7 +20,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "Nithin V | Senior AI Engineer",
-  description: "Nithin V's portfolio - Senior AI Engineer at TechCorp AI with 5+ years building production ML systems. Expertise in LLMs, MLOps, and autonomous vehicle perception systems.",
+  description: "Nithin V's portfolio - Senior AI Engineer at BCBS with 5+ years building production ML systems. Expertise in LLMs, MLOps, and autonomous vehicle perception systems.",
   keywords: ["AI Engineer", "Machine Learning", "Deep Learning", "MLOps", "LLM", "RAG", "Computer Vision", "NLP", "TensorFlow", "PyTorch"],
   authors: [{ name: "Nithin V" }],
   creator: "Nithin V",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://nithinv.dev",
     title: "Nithin V | Senior AI Engineer",
-    description: "Senior AI Engineer at TechCorp AI with expertise in production ML systems, LLMs, and autonomous vehicle perception.",
+    description: "Senior AI Engineer at BCBS with expertise in production ML systems, LLMs, and autonomous vehicle perception.",
     siteName: "Nithin V Portfolio",
   },
   twitter: {
