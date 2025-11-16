@@ -240,7 +240,7 @@ export function Projects() {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16"
         >
           {filteredProjects.map((project) => {
-            const IconComponent = project.icon
+            const IconComponent = project.icon as React.ComponentType<{ className?: string }>
             return (
               <motion.div key={project.id} variants={item}>
                 <Card className="h-full border border-border hover:shadow-lg transition-shadow">

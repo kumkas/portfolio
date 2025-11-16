@@ -130,21 +130,6 @@ export function Navigation() {
                   </Link>
                 ))}
                 
-                {/* Mobile Chat Button */}
-                <div className="px-4 pt-4 border-t border-border">
-                  <Button 
-                    variant="ai" 
-                    size="sm" 
-                    className="w-full"
-                    onClick={() => {
-                      setIsChatOpen(true)
-                      setIsMobileMenuOpen(false)
-                    }}
-                  >
-                    <Brain className="w-4 h-4 mr-2" />
-                    Chat with AI Alex
-                  </Button>
-                </div>
               </div>
             </motion.div>
           )}
