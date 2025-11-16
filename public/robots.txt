@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://alexchen.dev/sitemap.xml
+
+# Disallow specific paths if needed
+# Disallow: /api/
+# Disallow: /_next/
+
+# Crawl delay (optional)
+Crawl-delay: 1
