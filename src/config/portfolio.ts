@@ -69,12 +69,12 @@ export const portfolioConfig = {
       location: "New Jersey",
       duration: "May 2022 - Nov 2023",
       current: false,
-      description: "Developed machine learning solutions for e-commerce and fintech applications with focus on scalable data pipelines.",
+      description: "Developed machine learning solutions for retail e-commerce platform, focusing on personalization and customer analytics.",
       achievements: [
-        "Built recommendation systems for e-commerce platform serving millions of users",
-        "Designed and implemented fraud detection models for payment processing", 
-        "Mentored junior engineers and established ML development workflows",
-        "Led migration of analytics workloads to cloud infrastructure"
+        "Built product recommendation engine improving customer engagement and conversion rates",
+        "Developed customer segmentation models for targeted marketing campaigns", 
+        "Implemented search ranking algorithms to enhance product discovery experience",
+        "Created demand forecasting models for inventory optimization across retail stores"
       ],
       skills: ["Scikit-learn", "Apache Spark", "Docker", "PostgreSQL", "Redis"]
     },
