@@ -125,8 +125,6 @@ export function Experience() {
                         <span>{edu.duration}</span>
                         <span>•</span>
                         <span>{edu.location}</span>
-                        <span>•</span>
-                        <span>GPA: {edu.gpa}</span>
                       </div>
                       <Badge variant="outline" className="mb-2">{edu.specialization}</Badge>
                     </div>
