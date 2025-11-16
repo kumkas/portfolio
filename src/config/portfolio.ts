@@ -4,14 +4,14 @@ export const portfolioConfig = {
     name: "Nithin V",
     initials: "NV",
     title: "Senior AI Developer",
-    company: "BCBS",
+    company: "Ortho Diagnostics",
     location: "",
     email: "nkumarv18@gmail..com",
     phone: "+1 (555) 123-4567",
     website: "https://nithinv.dev",
     
     // Professional Summary
-    summary: "Senior AI Developer at BCBS with 5+ years of experience developing machine learning solutions for healthcare applications. Currently leading AI initiatives focused on claims processing automation and member services optimization. Previously worked at DataFlow Systems building scalable ML infrastructure and recommendation systems.",
+    summary: "Senior AI Developer at Ortho Diagnostics with 5+ years of experience developing machine learning solutions for healthcare applications. Currently leading AI initiatives focused on claims processing automation and member services optimization. Previously worked at DataFlow Systems building scalable ML infrastructure and recommendation systems.",
     
     // Availability Status
     availableForWork: true,
@@ -50,7 +50,7 @@ export const portfolioConfig = {
   experience: [
     {
       title: "Senior AI Developer",
-      company: "BCBS",
+      company: "Ortho Diagnostics",
       location: "",
       duration: "Dec 2023 - Present",
       current: true,
@@ -65,7 +65,7 @@ export const portfolioConfig = {
     },
     {
       title: "AI Engineer", 
-      company: "S&P Global",
+      company: "Target",
       location: "New Jersey",
       duration: "May 2022 - Nov 2023",
       current: false,
@@ -80,7 +80,7 @@ export const portfolioConfig = {
     },
     {
       title: "Data scientist",
-      company: "Credit Suisse", 
+      company: "Lowes", 
       location: "New York",
       duration: "Sep 2014 - Dec 2015",
       current: false,
@@ -154,13 +154,13 @@ export const portfolioConfig = {
   // SEO & Metadata
   seo: {
     title: "Nithin V | Senior AI Developer",
-    description: "Senior AI Developer at BCBS with 5+ years building production ML systems. Expertise in LLMs, MLOps, and autonomous vehicle perception systems.",
+    description: "Senior AI Developer at Ortho Diagnostics with 5+ years building production ML systems. Expertise in LLMs, MLOps, and autonomous vehicle perception systems.",
     keywords: [
       "AI Developer", "Machine Learning", "Deep Learning", "MLOps", "LLM", 
       "Large Language Models", "RAG", "Computer Vision", "NLP",
       "Natural Language Processing", "TensorFlow", "PyTorch", "Python",
       "Autonomous Vehicles", "Production ML", "AI Systems Architecture",
-      "Data Science", "Neural Networks", "Nithin V", "BCBS", "DataFlow Systems"
+      "Data Science", "Neural Networks", "Nithin V", "Ortho Diagnostics", "DataFlow Systems"
     ],
     url: "https://nithinv.dev",
     image: "https://nithinv.dev/og-image.jpg",
