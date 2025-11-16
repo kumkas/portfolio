@@ -99,7 +99,7 @@ export const portfolioConfig = {
   education: [
     {
       degree: "Master of Science",
-      school: "UMHB",
+      school: "UNT",
       location: "Texas", 
       duration: "2014 - 2016",
       specialization: "Information Technology",
