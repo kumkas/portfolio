@@ -52,7 +52,7 @@ export const portfolioConfig = {
       title: "Senior AI Developer",
       company: "BCBS",
       location: "",
-      duration: "Jan 2022 - Present",
+      duration: "Dec 2023 - Present",
       current: true,
       description: "Leading AI initiatives in healthcare technology, focusing on machine learning solutions for claims processing and member services.",
       achievements: [
@@ -64,10 +64,10 @@ export const portfolioConfig = {
       skills: ["PyTorch", "Kubernetes", "AWS", "TensorFlow", "MLflow", "FastAPI"]
     },
     {
-      title: "Machine Learning Engineer", 
-      company: "DataFlow Systems",
-      location: "Seattle, WA",
-      duration: "Mar 2020 - Dec 2021",
+      title: "AI Engineer", 
+      company: "S&P Global",
+      location: "New Jersey",
+      duration: "May 2022 - Nov 2023",
       current: false,
       description: "Developed machine learning solutions for e-commerce and fintech applications with focus on scalable data pipelines.",
       achievements: [
@@ -79,10 +79,10 @@ export const portfolioConfig = {
       skills: ["Scikit-learn", "Apache Spark", "Docker", "PostgreSQL", "Redis"]
     },
     {
-      title: "AI Research Engineer",
-      company: "InnovateAI Labs", 
-      location: "Boston, MA",
-      duration: "Jun 2019 - Feb 2020",
+      title: "Data scientist",
+      company: "Credit Suisse", 
+      location: "New York",
+      duration: "Sep 2014 - Dec 2015",
       current: false,
       description: "Conducted research in computer vision and natural language processing with applications to autonomous systems.",
       achievements: [
@@ -98,12 +98,11 @@ export const portfolioConfig = {
   // Education
   education: [
     {
-      degree: "Master of Science in Computer Science",
-      school: "Stanford University",
-      location: "Stanford, CA", 
-      duration: "2017 - 2019",
-      specialization: "Artificial Intelligence",
-      gpa: "3.9/4.0",
+      degree: "Master of Science",
+      school: "UMHB",
+      location: "Texas", 
+      duration: "2014 - 2016",
+      specialization: "Information Technology",
       thesis: "Neural Architecture Search for Efficient Deep Learning Models",
       achievements: [
         "Graduate Research Assistant in AI Lab",
@@ -113,13 +112,12 @@ export const portfolioConfig = {
       ]
     },
     {
-      degree: "Bachelor of Science in Computer Science",
-      school: "UC Berkeley",
-      location: "Berkeley, CA",
-      duration: "2013 - 2017", 
-      specialization: "Data Science & Machine Learning",
-      gpa: "3.8/4.0",
-      thesis: "Deep Learning for Medical Image Classification",
+      degree: "Bachelor of Technology",
+      school: "JNTU",
+      location: "HYD, IND",
+      duration: "2009 - 2013", 
+      specialization: "Electronics and Communication",
+
       achievements: [
         "Summa Cum Laude graduate",
         "President of AI/ML Student Society", 
